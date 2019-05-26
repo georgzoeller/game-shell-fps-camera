@@ -53,7 +53,7 @@ function CameraPlugin(game, opts) {
 
   var offset = this.game.playerHeight; // distance between camera pos (eyes) and player pos (feet), voxel-engine makePhysical envelope y TODO: stop hardcoding here..
   Object.defineProperty(this.player.position, 'x', { get:function() { return -camera.position[0]; }, set:function(v) { camera.position[0] = -v; }});
-  Object.defineProperty(this.player.position, 'y', { get:function() { return -camera.position[1]-offset; }, set:function(v) { camera.position[1] = -v-offset; }});
+  Object.defineProperty(this.player.position, 'y', { get:function() { return -camera.position[1]-offset; }, set:function(v) { camera.position[1] = -v -offset; }});
   Object.defineProperty(this.player.position, 'z', { get:function() { return -camera.position[2]; }, set:function(v) { camera.position[2] = -v; }});
 
   var updateRotation = function() {
