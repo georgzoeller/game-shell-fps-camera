@@ -1,11 +1,11 @@
 {
   "name": "game-shell-fps-camera",
   "description": "first person shooter camera for game-shell",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "main": "fps-camera.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:deathcap/game-shell-fps-camera.git"
+    "url": "git@github.com:georgzoeller/game-shell-fps-camera.git"
   },
   "keywords": [
     "voxel",
