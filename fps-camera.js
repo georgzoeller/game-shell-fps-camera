@@ -51,7 +51,7 @@ function CameraPlugin(game, opts) {
     translateZ: translateOnAxis.bind(null, 0, 0, -1),
   };
 
-  var offset = game.playerHeight; // distance between camera pos (eyes) and player pos (feet), voxel-engine makePhysical envelope y TODO: stop hardcoding here..
+  var offset = this.game.playerHeight; // distance between camera pos (eyes) and player pos (feet), voxel-engine makePhysical envelope y TODO: stop hardcoding here..
   Object.defineProperty(this.player.position, 'x', { get:function() { return -camera.position[0]; }, set:function(v) { camera.position[0] = -v; }});
   Object.defineProperty(this.player.position, 'y', { get:function() { return -camera.position[1]-offset; }, set:function(v) { camera.position[1] = -v-offset; }});
   Object.defineProperty(this.player.position, 'z', { get:function() { return -camera.position[2]; }, set:function(v) { camera.position[2] = -v; }});
@@ -80,7 +80,7 @@ CameraPlugin.prototype.enable = function() {
   this.shell.bind('jump', 'space');
   this.shell.bind('crouch', 'shift');
 
-  this.physics = this.game.makePhysical(this.player); // voxel-physical
+  this.physics = this.game.makePhysical(this.player, [2 / 3, this.game.playerHeight, 2 / 3]); // voxel-physical
   this.game.addItem(this.physics);
   this.physics.yaw = this.player;
   this.physics.pitch = this.player;//.head; TODO
